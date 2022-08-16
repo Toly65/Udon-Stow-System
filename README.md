@@ -1,5 +1,8 @@
 # Udon Stow System
 
+## THIS WILL ONLY WORK WITH PROJECT MADE WITH UDONSHARP 1.X
+the easiest way to obtain a project with the latest version of udonsharp is using the creator companion from the VRchat website
+
 
 https://user-images.githubusercontent.com/88860967/184829849-d8726fcb-bda2-4b85-bfcb-419e12853b2e.mp4
 
