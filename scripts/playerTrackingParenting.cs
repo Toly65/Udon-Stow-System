@@ -16,35 +16,9 @@ public class playerTrackingParenting : UdonSharpBehaviour
     {
         localplayer = VRCPlayerApi.GetPlayerById(Networking.LocalPlayer.playerId);
     }
-    public void InputGrab(bool value, VRC.Udon.Common.UdonInputEventArgs args)
+    public override void OnAvatarEyeHeightChanged(VRCPlayerApi player, float prevEyeHeightAsMeters)
     {
-        float scale = GetLocalAvatarHeight();
-        mainTransform.localScale = new Vector3(scale, scale, scale);
-    }
-
-    public float GetAvatarHeight(VRCPlayerApi player)
-    {
-        float height = 0;
-        Vector3 postition1 = player.GetBonePosition(HumanBodyBones.Head);
-        Vector3 postition2 = player.GetBonePosition(HumanBodyBones.Neck);
-        height += (postition1 - postition2).magnitude;
-        postition1 = postition2;
-        postition2 = player.GetBonePosition(HumanBodyBones.Hips);
-        height += (postition1 - postition2).magnitude;
-        postition1 = postition2;
-        postition2 = player.GetBonePosition(HumanBodyBones.RightLowerLeg);
-        height += (postition1 - postition2).magnitude;
-        postition1 = postition2;
-        postition2 = player.GetBonePosition(HumanBodyBones.RightFoot);
-        height += (postition1 - postition2).magnitude;
-        avatarSize = height;
-        return height;
-    }
-    private float GetLocalAvatarHeight()
-    {
-        if (Networking.LocalPlayer == null)
-            return 1;
-        return GetAvatarHeight(Networking.LocalPlayer);
+        mainTransform.localScale = new Vector3(player.GetAvatarEyeHeightAsMeters(), player.GetAvatarEyeHeightAsMeters(), player.GetAvatarEyeHeightAsMeters());
     }
 
     public void Update()

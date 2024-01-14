@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: StowPoint
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 1db1eda022c27194d8e527cd3975f1d4,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: e8e433bf5e1b67b44992dcabf11579bf,
     type: 2}
   udonAssembly: 
   assemblyError: 

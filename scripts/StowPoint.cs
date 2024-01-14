@@ -56,15 +56,15 @@ public class StowPoint : UdonSharpBehaviour
             }
             else
             {
-                //track how far the pickup goes
-                float distance = Vector3.Distance(recievabePickup.transform.position, transform.position);
-                if(distance > proximityDistance)
-                {
-                    ReturnToDefaultState();
-                    return;
-                }
                 if(recievabePickup)
                 {
+                    //track how far the pickup goes
+                    float distance = Vector3.Distance(recievabePickup.transform.position, transform.position);
+                    if (distance > proximityDistance)
+                    {
+                        ReturnToDefaultState();
+                        return;
+                    }
                     if (!recievabePickup.IsHeld)
                     {
                         lockItem(recievabePickup);
